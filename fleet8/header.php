@@ -21,6 +21,9 @@
                         <?php if (hasPermission('maintenance_view')): ?>
                             <li><a href="maintenance.php">Maintenance</a></li>
                         <?php endif; ?>
+                        <?php if (hasPermission('vehicles_view')): ?>
+                            <li><a href="products.php">Products</a></li>
+                        <?php endif; ?>
                     </ul>
                 </li>
             <?php endif; ?>
@@ -32,7 +35,14 @@
                 <li><a href="departments.php" class="nav-link">Departments</a></li>
             <?php endif; ?>
             <?php if (hasPermission('reports_view')): ?>
-                <li><a href="reports.php" class="nav-link">Reports</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Reports <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reports.php">Fuel Logs Report</a></li>
+                        <li><a href="maintenance-reports.php">Maintenance Report</a></li>
+                        <li><a href="product-reports.php">Product Report</a></li>
+                    </ul>
+                </li>
             <?php endif; ?>
             <?php if (hasPermission('users_view')): ?>
                 <li><a href="users.php" class="nav-link">Users</a></li>
